@@ -1,0 +1,1421 @@
+{
+    "@context": "https://frost.met.no/schema",
+    "@type": "SourceResponse",
+    "apiVersion": "v0",
+    "license": "https://creativecommons.org/licenses/by/3.0/no/",
+    "createdAt": "2023-07-10T11:03:19Z",
+    "queryTime": 1.505,
+    "currentItemCount": 49,
+    "itemsPerPage": 49,
+    "offset": 0,
+    "totalItemCount": 49,
+    "currentLink": "https://frost.met.no/sources/v0.jsonld?types=SensorSystem&geometry=POLYGON%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20((10%2060,10%2065,%2011%2065,%2010%2060))",
+    "data": [
+        {
+            "@type": "SensorSystem",
+            "id": "SN71230",
+            "name": "FV755 MELTINGEN",
+            "shortName": "FV755 Meltingen",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.7303,
+                    63.7905
+                ],
+                "nearest": false
+            },
+            "masl": 225,
+            "validFrom": "2014-09-11T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "INDERØY",
+            "municipalityId": 5053,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1729012",
+                "304"
+            ],
+            "wigosId": "0-578-0-71230"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN71385",
+            "name": "FV715 HOGSDALEN",
+            "shortName": "FV715 Hogsdalen",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2425,
+                    63.6965
+                ],
+                "nearest": false
+            },
+            "masl": 232,
+            "validFrom": "2017-07-06T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "INDRE FOSEN",
+            "municipalityId": 5054,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1711",
+                "3000002"
+            ],
+            "wigosId": "0-578-0-71385"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN71780",
+            "name": "ÅFJORD II",
+            "shortName": "Åfjord",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1242,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2237,
+                    63.9678
+                ],
+                "nearest": false
+            },
+            "masl": 30,
+            "validFrom": "2007-11-29T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "ÅFJORD",
+            "municipalityId": 5058,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "0-20000-0-01242",
+                "10.249.0.162"
+            ],
+            "wigosId": "0-20000-0-01242"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN8780",
+            "name": "LI BRU",
+            "shortName": "Folldal (Li bru)",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.0003,
+                    62.0103
+                ],
+                "nearest": false
+            },
+            "masl": 780,
+            "validFrom": "2004-12-24T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "FOLLDAL",
+            "municipalityId": 3429,
+            "stationHolders": [
+                "NVE"
+            ],
+            "externalIds": [
+                "2.479"
+            ],
+            "wigosId": "0-578-0-8780"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67270",
+            "name": "E6 SOKNEDAL",
+            "shortName": "E6 Soknedal",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2373,
+                    62.983
+                ],
+                "nearest": false
+            },
+            "masl": 160,
+            "validFrom": "2012-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MIDTRE GAULDAL",
+            "municipalityId": 5027,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "137",
+                "1629016"
+            ],
+            "wigosId": "0-578-0-67270"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN8720",
+            "name": "ATNSJØEN",
+            "shortName": "Atnsjøen",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1398,
+                    61.8902
+                ],
+                "nearest": false
+            },
+            "masl": 749,
+            "validFrom": "1903-01-01T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "STOR-ELVDAL",
+            "municipalityId": 3423,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-8720"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68230",
+            "name": "TRONDHEIM - RISVOLLAN",
+            "shortName": "Risvollan",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4228,
+                    63.3987
+                ],
+                "nearest": false
+            },
+            "masl": 84,
+            "validFrom": "1986-12-11T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "NVE"
+            ],
+            "externalIds": [
+                "123.38"
+            ],
+            "wigosId": "0-578-0-68230"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67560",
+            "name": "KOTSØY",
+            "shortName": "Kotsøy",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1254,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.5608,
+                    62.9763
+                ],
+                "nearest": false
+            },
+            "masl": 127,
+            "validFrom": "2007-11-27T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MIDTRE GAULDAL",
+            "municipalityId": 5027,
+            "stationHolders": [
+                "BANE NOR"
+            ],
+            "externalIds": [
+                "0-20000-0-01254",
+                "10.249.0.76"
+            ],
+            "wigosId": "0-20000-0-01254"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67210",
+            "name": "E6 HORG",
+            "shortName": "E6 Horg",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.255,
+                    63.1385
+                ],
+                "nearest": false
+            },
+            "masl": 40,
+            "validFrom": "2011-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MELHUS",
+            "municipalityId": 5028,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1629008",
+                "8"
+            ],
+            "wigosId": "0-578-0-67210"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN75410",
+            "name": "NORDØYAN FYR",
+            "shortName": "Nordøyan fyr",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1262,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.5493,
+                    64.7977
+                ],
+                "nearest": false
+            },
+            "masl": 33,
+            "validFrom": "1890-12-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "NÆRØYSUND",
+            "municipalityId": 5060,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "0-20000-0-01262",
+                "10.249.0.119",
+                "300125061929020"
+            ],
+            "wigosId": "0-20000-0-01262"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68125",
+            "name": "SVERRESBORG",
+            "shortName": "Sverresborg",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.3498,
+                    63.4223
+                ],
+                "nearest": false
+            },
+            "masl": 156,
+            "validFrom": "2007-07-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "TRONDHEIM KOMMUNE"
+            ],
+            "wigosId": "0-578-0-68125"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN71750",
+            "name": "BREIVOLL",
+            "shortName": "Breivoll",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4055,
+                    63.918
+                ],
+                "nearest": false
+            },
+            "masl": 94,
+            "validFrom": "1966-08-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "ÅFJORD",
+            "municipalityId": 5058,
+            "stationHolders": [
+                "TRØNDER-ENERGI KRAFT AS"
+            ],
+            "wigosId": "0-578-0-71750"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68173",
+            "name": "TRONDHEIM - GLØSHAUGEN",
+            "shortName": "Gløshaugen",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4072,
+                    63.4153
+                ],
+                "nearest": false
+            },
+            "masl": 60,
+            "validFrom": "2015-12-15T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "10.249.0.58"
+            ],
+            "wigosId": "0-578-0-68173"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67150",
+            "name": "LEINSTRAND",
+            "shortName": "Leinstrand",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2733,
+                    63.3281
+                ],
+                "nearest": false
+            },
+            "masl": 13,
+            "validFrom": "1960-08-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-67150"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68110",
+            "name": "SKISTUA",
+            "shortName": "Skistua",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2642,
+                    63.4182
+                ],
+                "nearest": false
+            },
+            "masl": 451,
+            "validFrom": "1902-07-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "TRONDHEIM KOMMUNE"
+            ],
+            "wigosId": "0-578-0-68110"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN69010",
+            "name": "SVARTTJØRNBEKKEN",
+            "shortName": "Svarttjørnbekken",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.648,
+                    63.3188
+                ],
+                "nearest": false
+            },
+            "masl": 285,
+            "validFrom": "2019-09-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "NVE"
+            ],
+            "externalIds": [
+                "123.93"
+            ],
+            "wigosId": "0-578-0-69010"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN71280",
+            "name": "LEKSVIK - MYRAN",
+            "shortName": "Leksvik",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.6075,
+                    63.6856
+                ],
+                "nearest": false
+            },
+            "masl": 138,
+            "validFrom": "1970-10-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "INDRE FOSEN",
+            "municipalityId": 5054,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-71280"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67153",
+            "name": "E39 ØYSAND",
+            "shortName": "E39 Øysand",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2438,
+                    63.3237
+                ],
+                "nearest": false
+            },
+            "masl": 13,
+            "validFrom": "2013-12-19T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MELHUS",
+            "municipalityId": 5028,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1629017",
+                "222"
+            ],
+            "wigosId": "0-578-0-67153"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68050",
+            "name": "LADE",
+            "shortName": "Lade",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4428,
+                    63.4428
+                ],
+                "nearest": false
+            },
+            "masl": 13,
+            "validFrom": "2004-11-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "TRONDHEIM KOMMUNE"
+            ],
+            "wigosId": "0-578-0-68050"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN13160",
+            "name": "KVITFJELL",
+            "shortName": "Kvitfjell",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1375,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1277,
+                    61.4648
+                ],
+                "nearest": false
+            },
+            "masl": 1030,
+            "validFrom": "1992-09-16T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "RINGEBU",
+            "municipalityId": 3439,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "0-20000-0-01375",
+                "10.249.0.112"
+            ],
+            "wigosId": "0-20000-0-01375"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68860",
+            "name": "TRONDHEIM - VOLL",
+            "shortName": "Trondheim − Voll",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1257,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4538,
+                    63.4107
+                ],
+                "nearest": false
+            },
+            "masl": 127,
+            "validFrom": "1923-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "0-20000-0-01257",
+                "10.249.0.160",
+                "10.249.1.16"
+            ],
+            "wigosId": "0-20000-0-01257"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN13390",
+            "name": "E6 FRYA",
+            "shortName": "E6 Frya",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.0747,
+                    61.5298
+                ],
+                "nearest": false
+            },
+            "masl": 185,
+            "validFrom": "2014-09-11T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "RINGEBU",
+            "municipalityId": 3439,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "290",
+                "529003"
+            ],
+            "wigosId": "0-578-0-13390"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68863",
+            "name": "TRONDHEIM - VOLL PLU",
+            "shortName": "Trondheim - Voll PLU",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4535,
+                    63.4107
+                ],
+                "nearest": false
+            },
+            "masl": 127,
+            "validFrom": "2000-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "TRONDHEIM KOMMUNE"
+            ],
+            "wigosId": "0-578-0-68863"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68262",
+            "name": "KLÆBU II",
+            "shortName": "Klæbu ",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4657,
+                    63.3064
+                ],
+                "nearest": false
+            },
+            "masl": 143,
+            "validFrom": "2019-10-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "TRONDHEIM KOMMUNE"
+            ],
+            "wigosId": "0-578-0-68262"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN21680",
+            "name": "VEST-TORPA II",
+            "shortName": "Vest-Torpa",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1374,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.0358,
+                    60.9345
+                ],
+                "nearest": false
+            },
+            "masl": 542,
+            "validFrom": "1986-08-01T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "NORDRE LAND",
+            "municipalityId": 3448,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "0-20000-0-01374",
+                "10.249.1.22"
+            ],
+            "wigosId": "0-20000-0-01374"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68238",
+            "name": "E6 HEIMDAL",
+            "shortName": "E6 Heimdal",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.3695,
+                    63.3478
+                ],
+                "nearest": false
+            },
+            "masl": 140,
+            "validFrom": "2011-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1629003",
+                "25"
+            ],
+            "wigosId": "0-578-0-68238"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN13420",
+            "name": "VENABU",
+            "shortName": "Venabu",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1380,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1082,
+                    61.6513
+                ],
+                "nearest": false
+            },
+            "masl": 930,
+            "validFrom": "1980-08-01T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "RINGEBU",
+            "municipalityId": 3439,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "0-20000-0-01380",
+                "10.249.0.165"
+            ],
+            "wigosId": "0-20000-0-01380"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68175",
+            "name": "E6 MOHOLTLIA",
+            "shortName": "E6 Moholtlia",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4388,
+                    63.4078
+                ],
+                "nearest": false
+            },
+            "masl": 120,
+            "validFrom": "2013-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "15",
+                "1629005"
+            ],
+            "wigosId": "0-578-0-68175"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN8970",
+            "name": "EINUNNA KRAFTVERK",
+            "shortName": "Einunna",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.3418,
+                    62.2317
+                ],
+                "nearest": false
+            },
+            "masl": 746,
+            "validFrom": "1991-12-01T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "FOLLDAL",
+            "municipalityId": 3429,
+            "stationHolders": [],
+            "wigosId": "0-578-0-8970"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN66850",
+            "name": "KVIKNE I ØSTERDAL",
+            "shortName": "Kvikne",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.271,
+                    62.5962
+                ],
+                "nearest": false
+            },
+            "masl": 549,
+            "validFrom": "1895-07-01T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "TYNSET",
+            "municipalityId": 3427,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-66850"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN9870",
+            "name": "BLANKTJERNMOEN I KVIKNE",
+            "shortName": "Blanktjernmoen",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.428,
+                    62.4343
+                ],
+                "nearest": false
+            },
+            "masl": 692,
+            "validFrom": "1953-09-01T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "TYNSET",
+            "municipalityId": 3427,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-9870"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68010",
+            "name": "TRONDHEIM - HØVRINGEN",
+            "shortName": "Høvringen ",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.3364,
+                    63.4465
+                ],
+                "nearest": false
+            },
+            "masl": 44,
+            "validFrom": "2016-05-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "SINTEF BYGGFORSK"
+            ],
+            "wigosId": "0-578-0-68010"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67140",
+            "name": "SKJETLEIN",
+            "shortName": "Skjetlein",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2973,
+                    63.3403
+                ],
+                "nearest": false
+            },
+            "masl": 48,
+            "validFrom": "1991-01-02T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "NIBIO"
+            ],
+            "externalIds": [
+                "14"
+            ],
+            "wigosId": "0-578-0-67140"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN71805",
+            "name": "FV715 MOMYR",
+            "shortName": "FV715 Momyr",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.5248,
+                    64.0972
+                ],
+                "nearest": false
+            },
+            "masl": 265,
+            "validFrom": "2012-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "ÅFJORD",
+            "municipalityId": 5058,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1629013",
+                "19"
+            ],
+            "wigosId": "0-578-0-71805"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67340",
+            "name": "E6 BUVATNET",
+            "shortName": "E6 Buvatnet",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.0213,
+                    62.8613
+                ],
+                "nearest": false
+            },
+            "masl": 425,
+            "validFrom": "2012-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "RENNEBU",
+            "municipalityId": 5022,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1629001",
+                "21"
+            ],
+            "wigosId": "0-578-0-67340"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN13150",
+            "name": "FÅVANG",
+            "shortName": "Fåvang",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1387,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1872,
+                    61.4582
+                ],
+                "nearest": false
+            },
+            "masl": 200,
+            "validFrom": "2009-11-18T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "RINGEBU",
+            "municipalityId": 3439,
+            "stationHolders": [
+                "NIBIO"
+            ],
+            "externalIds": [
+                "0-20000-0-01387",
+                "1387",
+                "36"
+            ],
+            "wigosId": "0-20000-0-01387"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN69655",
+            "name": "FROSTA",
+            "shortName": "Frosta",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1272,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.6932,
+                    63.5652
+                ],
+                "nearest": false
+            },
+            "masl": 32,
+            "validFrom": "1989-12-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "FROSTA",
+            "municipalityId": 5036,
+            "stationHolders": [
+                "NIBIO"
+            ],
+            "externalIds": [
+                "0-20000-0-01272",
+                "1272",
+                "4"
+            ],
+            "wigosId": "0-20000-0-01272"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67280",
+            "name": "SOKNEDAL",
+            "shortName": "Soknedal",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1253,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1788,
+                    62.9535
+                ],
+                "nearest": false
+            },
+            "masl": 299,
+            "validFrom": "2007-12-20T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MIDTRE GAULDAL",
+            "municipalityId": 5027,
+            "stationHolders": [
+                "BANE NOR"
+            ],
+            "externalIds": [
+                "0-20000-0-01253",
+                "10.249.0.75"
+            ],
+            "wigosId": "0-20000-0-01253"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68270",
+            "name": "LØKSMYR",
+            "shortName": "Løksmyr",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.4369,
+                    63.2315
+                ],
+                "nearest": false
+            },
+            "masl": 173,
+            "validFrom": "1960-01-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MELHUS",
+            "municipalityId": 5028,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-68270"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN67175",
+            "name": "E6 KVÅL",
+            "shortName": "E6 Kvål",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.2832,
+                    63.2583
+                ],
+                "nearest": false
+            },
+            "masl": 13,
+            "validFrom": "2022-11-28T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MELHUS",
+            "municipalityId": 5028,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "2988055",
+                "3000831"
+            ],
+            "wigosId": "0-578-0-67175"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN69035",
+            "name": "E6 MALVIK",
+            "shortName": "E6 Malvik",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.664,
+                    63.4262
+                ],
+                "nearest": false
+            },
+            "masl": 133,
+            "validFrom": "2015-10-20T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "MALVIK",
+            "municipalityId": 5031,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1629009",
+                "23"
+            ],
+            "wigosId": "0-578-0-69035"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN66810",
+            "name": "RV3 LITJFOSSEN",
+            "shortName": "Litjfossen",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1523,
+                    62.6692
+                ],
+                "nearest": false
+            },
+            "masl": 525,
+            "validFrom": "2014-09-11T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "TYNSET",
+            "municipalityId": 3427,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "287",
+                "429025"
+            ],
+            "wigosId": "0-578-0-66810"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN21700",
+            "name": "FV250 VINGOMRÅSAN",
+            "shortName": "FV250 Vingromåsan",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1453,
+                    61.0102
+                ],
+                "nearest": false
+            },
+            "masl": 796,
+            "validFrom": "2017-11-27T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "NORDRE LAND",
+            "municipalityId": 3448,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "1740",
+                "3000011"
+            ],
+            "wigosId": "0-578-0-21700"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN66900",
+            "name": "RV3 KVIKNESKOGEN",
+            "shortName": "RV3 Kvikneskogen",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.3925,
+                    62.4763
+                ],
+                "nearest": false
+            },
+            "masl": 695,
+            "validFrom": "2011-04-13T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "TYNSET",
+            "municipalityId": 3427,
+            "stationHolders": [
+                "STATENS VEGVESEN"
+            ],
+            "externalIds": [
+                "151",
+                "429009"
+            ],
+            "wigosId": "0-578-0-66900"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN68120",
+            "name": "SAUPSTAD",
+            "shortName": "Saupstad",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.3597,
+                    63.3628
+                ],
+                "nearest": false
+            },
+            "masl": 135,
+            "validFrom": "2005-06-30T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "TRONDHEIM KOMMUNE"
+            ],
+            "wigosId": "0-578-0-68120"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN13060",
+            "name": "GAUSDAL - OVREHAGEN",
+            "shortName": "Gausdal",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.1732,
+                    61.2732
+                ],
+                "nearest": false
+            },
+            "masl": 552,
+            "validFrom": "2011-04-07T00:00:00.000Z",
+            "county": "INNLANDET",
+            "countyId": 34,
+            "municipality": "GAUSDAL",
+            "municipalityId": 3441,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-13060"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN71900",
+            "name": "BESSAKER",
+            "shortName": "Bessaker",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.3257,
+                    64.2448
+                ],
+                "nearest": false
+            },
+            "masl": 12,
+            "validFrom": "1895-07-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "ÅFJORD",
+            "municipalityId": 5058,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "wigosId": "0-578-0-71900"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN69020",
+            "name": "RANHEIM",
+            "shortName": "Ranheim",
+            "country": "Norge",
+            "countryCode": "NO",
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.515,
+                    63.4268
+                ],
+                "nearest": false
+            },
+            "masl": 27,
+            "validFrom": "1970-03-04T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "TRONDHEIM",
+            "municipalityId": 5001,
+            "stationHolders": [
+                "TRONDHEIM KOMMUNE"
+            ],
+            "wigosId": "0-578-0-69020"
+        },
+        {
+            "@type": "SensorSystem",
+            "id": "SN71990",
+            "name": "BUHOLMRÅSA FYR",
+            "shortName": "Buholmråsa fyr",
+            "country": "Norge",
+            "countryCode": "NO",
+            "wmoId": 1259,
+            "geometry": {
+                "@type": "Point",
+                "coordinates": [
+                    10.455,
+                    64.4013
+                ],
+                "nearest": false
+            },
+            "masl": 18,
+            "validFrom": "1965-11-01T00:00:00.000Z",
+            "county": "TRØNDELAG",
+            "countyId": 50,
+            "municipality": "OSEN",
+            "municipalityId": 5020,
+            "stationHolders": [
+                "MET.NO"
+            ],
+            "externalIds": [
+                "0-20000-0-01259",
+                "10.249.0.72"
+            ],
+            "wigosId": "0-20000-0-01259"
+        }
+    ]
+}
