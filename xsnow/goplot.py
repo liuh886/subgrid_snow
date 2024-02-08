@@ -163,8 +163,8 @@ def final_histogram(
                  np.std(dHfinal), RMSE(dHfinal), 
                  np.sum(np.isfinite(dHfinal)),nmad[1]]
     
-    ax.plot(k2[1:], k1, 'r-', linewidth=1.2,alpha=0.7)
-    ax.plot(j2[1:], j1, 'k-', linewidth=1.2,alpha=0.7)
+    ax.plot(j2[1:], j1, 'k-', linewidth=1.2,alpha=0.7) # legend = 'Original'
+    ax.plot(k2[1:], k1, 'r-', linewidth=1.2,alpha=0.7) # legend = 'Coregistered'
 
     if dH_ref is not None:
         dH_ref = np.asarray(dH_ref)
@@ -639,23 +639,24 @@ def plot_bias_and_pred_bias_b(df_):
 
     return (snow_dtm10_b + snow_dtm1_b + snow_cop30_b + snow_fab_b + snow_dtm10 + snow_dtm1 + snow_cop30 + snow_fab).cols(4)
 
-def plot_all_hist_sf(df_,std=3,perc_t=99,window=(-10,10)):
-    fig,axs = plt.subplots(2,2,figsize=(15,12))
+def plot_all_hist_sf(df_,std=3,perc_t=99,window=(-10,10),range=(-10,10)):
+    fig,axs = plt.subplots(2,2,figsize=(15,10))
 
     if 'dh_before_dtm10' in df_.keys():
         '''
         dh_after is after coregistration
         dh_reg is after bias-correction regression
         '''
-        final_histogram(df_['dh_after_dtm10'],df_['dh_reg_dtm10'],dH_ref=df_['dh_before_dtm10'],ax=axs[0,1],legend=['After coreg','After bias-correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True)
-        final_histogram(df_['dh_after_dtm1'],df_['dh_reg_dtm1'],dH_ref=df_['dh_before_dtm1'],ax=axs[0,0],legend=['After co-registration','After bias correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True,title='')
-        final_histogram(df_['dh_after_cop30'],df_['dh_reg_cop30'],dH_ref=df_['dh_before_cop30'],ax=axs[1,0],legend=['After co-registration','After bias correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True,title='')
-        final_histogram(df_['dh_after_fab'],df_['dh_reg_fab'],dH_ref=df_['dh_before_fab'],ax=axs[1,1],legend=['After coreg','After bias-correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True)
+
+        final_histogram(df_['dh_after_dtm10'],df_['dh_reg_dtm10'],dH_ref=df_['dh_before_dtm10'],ax=axs[0,1],legend=['After co-registration','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='DTM1')
+        final_histogram(df_['dh_after_dtm1'],df_['dh_reg_dtm1'],dH_ref=df_['dh_before_dtm1'],ax=axs[0,0],legend=['After co-registration','After bias correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='DTM10')
+        final_histogram(df_['dh_after_cop30'],df_['dh_reg_cop30'],dH_ref=df_['dh_before_cop30'],ax=axs[1,0],legend=['After co-registration','After bias correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='COP30')
+        final_histogram(df_['dh_after_fab'],df_['dh_reg_fab'],dH_ref=df_['dh_before_fab'],ax=axs[1,1],legend=['After co-registration','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='FAB')
     else:
-        final_histogram(df_['dh_after_dtm10'],df_['dh_reg_dtm10'],ax=axs[0,0],legend=['After coreg','After bias-correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True)
-        final_histogram(df_['dh_after_dtm1'],df_['dh_reg_dtm1'],ax=axs[0,1],legend=['After coreg','After bias-correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True)
-        final_histogram(df_['dh_after_cop30'],df_['dh_reg_cop30'],ax=axs[1,0],legend=['After coreg','After bias-correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True)
-        final_histogram(df_['dh_after_fab'],df_['dh_reg_fab'],ax=axs[1,1],legend=['After coreg','After bias-correction','Raw'],range=(-10,10),std_t=std,perc_t=perc_t,window=window,quantile=True)
+        final_histogram(df_['dh_after_dtm10'],df_['dh_reg_dtm10'],ax=axs[0,0],legend=['After coreg','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True)
+        final_histogram(df_['dh_after_dtm1'],df_['dh_reg_dtm1'],ax=axs[0,1],legend=['After coreg','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True)
+        final_histogram(df_['dh_after_cop30'],df_['dh_reg_cop30'],ax=axs[1,0],legend=['After coreg','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True)
+        final_histogram(df_['dh_after_fab'],df_['dh_reg_fab'],ax=axs[1,1],legend=['After coreg','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True)
         
     for ax in axs.flatten():
         ax.grid(False)
