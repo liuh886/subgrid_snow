@@ -306,7 +306,13 @@ def quantile_calculate(df, nve='sd_nve_10', dem='sd_predict_dtm1',split=0):
     return {'delta_lt1': dq_lt1, 'dem_q_lt1':dem_q_lt1, 'delta_gt1': dq_gt1,'dem_q_gt1':dem_q_gt1 }
 
 def quantile_mapping(df, dq_lt1, dq_gt1, split=0, dem='sd_predict_dtm1'):
-    
+    '''
+    The idea of dq_lt1 and dq_gt1 is to split the snow depth into two parts, and then calculate the quantile mapping for each part.
+
+    However, it is not necessary to do it as well as set split=0. 
+    '''
+
+
     df[dem + '_'] = df[dem].copy()
     
     # for part of values below than split
@@ -331,7 +337,7 @@ def quantile_mapping(df, dq_lt1, dq_gt1, split=0, dem='sd_predict_dtm1'):
 def quantile_mapping_original(df, dq_gt1, dem_q_gt1, split=0, dem='sd_predict_dtm1'):
 
     '''
-    Quantile mapping using the quantiles from samples. Not from iteself.
+    Quantile mapping using the quantiles from samples (dem_q_gt1, equals using the snow depth directly). Not calculated from iteself.
 
     split == 1, means the values below 1 does not be corrected.
 
