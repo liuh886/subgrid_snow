@@ -119,13 +119,13 @@ def final_histogram(
 
     if ax is None:
         fig,ax = plt.subplots(figsize=(7, 5), dpi=200)
+
     ax.set_title(title, fontsize=10)
 
-
+    # Remove NaN values
     dH0 = dH0[np.isfinite(dH0)]
     dHfinal = dHfinal[np.isfinite(dHfinal)]
     number_raw = len(dH0)
-
     nmad = [xdem.spatialstats.nmad(dH0),xdem.spatialstats.nmad(dHfinal)]
 
     # using 3 std by default as a threshold
@@ -151,7 +151,7 @@ def final_histogram(
             dH0 = np.squeeze(np.asarray(dH0[np.logical_and.reduce((np.isfinite(dH0), (np.abs(dH0) < np.nanstd(dH0) * std_t)))]))
             dHfinal = np.squeeze(np.asarray(dHfinal[np.logical_and.reduce((np.isfinite(dHfinal),(np.abs(dHfinal) < np.nanstd(dHfinal) * std_t)))]))
 
-
+    # Start plotting
     j1, j2 = np.histogram(dH0, bins=bins, range=range,density=density)
     k1, k2 = np.histogram(dHfinal, bins=bins, range=range,density=density)
 
@@ -240,7 +240,8 @@ def final_histogram(
 
     if pp is not None:
         fig.savefig(pp, bbox_inches='tight', dpi=300)
-    return stats0,stats_fin
+
+    return stats0,stats_fin,stats_ref
 
 def normal_statistics(dH0: np.ndarray,
                       perc_t = 99.875,
@@ -647,11 +648,49 @@ def plot_all_hist_sf(df_,std=3,perc_t=99,window=(-10,10),range=(-10,10)):
         dh_after is after coregistration
         dh_reg is after bias-correction regression
         '''
-
         final_histogram(df_['dh_after_dtm10'],df_['dh_reg_dtm10'],dH_ref=df_['dh_before_dtm10'],ax=axs[0,1],legend=['After co-registration','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='DTM1')
         final_histogram(df_['dh_after_dtm1'],df_['dh_reg_dtm1'],dH_ref=df_['dh_before_dtm1'],ax=axs[0,0],legend=['After co-registration','After bias correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='DTM10')
         final_histogram(df_['dh_after_cop30'],df_['dh_reg_cop30'],dH_ref=df_['dh_before_cop30'],ax=axs[1,0],legend=['After co-registration','After bias correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='COP30')
         final_histogram(df_['dh_after_fab'],df_['dh_reg_fab'],dH_ref=df_['dh_before_fab'],ax=axs[1,1],legend=['After co-registration','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True,title='FAB')
+
+        # Show the plot of histograms
+        plt.show()
+
+        data_to_combine = []
+
+        # List of tuples (column name, DEM type, Correction type)
+        data_sources = [
+            ('dh_after_dtm10', 'DTM10', 'Bias-corrected'),
+            ('dh_before_dtm10', 'DTM10', 'Raw'),
+            ('dh_after_dtm1', 'DTM1', 'Bias-corrected'),
+            ('dh_before_dtm1', 'DTM1', 'Raw'),
+            ('dh_after_cop30', 'COP30', 'Bias-corrected'),
+            ('dh_before_cop30', 'COP30', 'Raw'),
+            ('dh_after_fab', 'FAB', 'Bias-corrected'),
+            ('dh_before_fab', 'FAB', 'Raw'),
+        ]
+
+        # Loop through your data sources and prepare the DataFrame
+        for col_name, dem_type, correction_type in data_sources:
+            temp_df = pd.DataFrame({
+                "DEM": dem_type,
+                "Elevation difference [m]": df_[col_name],
+                "Type": correction_type
+            })
+            data_to_combine.append(temp_df)
+        df_combined = pd.concat(data_to_combine, ignore_index=True)
+        # remove Elevation difference above 10 m
+        df_combined = df_combined[df_combined['Elevation difference [m]'].abs() <= 10]
+        # Plot violin plot in a separate figure
+        plt.figure()
+        sns.set_theme(style="whitegrid")
+        ax = sns.violinplot(data=df_combined, x="DEM", y="Elevation difference [m]", hue="Type", split=True, inner="quart")
+        legend = ax.legend()
+        legend.set_title('')
+        ax.set_ylim(-7,7)
+ 
+        plt.savefig("violin_plot.png",dpi=600)
+
     else:
         final_histogram(df_['dh_after_dtm10'],df_['dh_reg_dtm10'],ax=axs[0,0],legend=['After coreg','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True)
         final_histogram(df_['dh_after_dtm1'],df_['dh_reg_dtm1'],ax=axs[0,1],legend=['After coreg','After bias-correction','Raw'],range=range,std_t=std,perc_t=perc_t,window=window,quantile=True)

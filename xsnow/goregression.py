@@ -293,48 +293,32 @@ def regression_task(new_df_era,
 def quantile_calculate(df, nve='sd_nve_10', dem='sd_predict_dtm1',split=0):
 
     _df = df.query(f'10 > {nve} > 0 & {dem} > 0')
-
-    # Calculate quantiles for _df[dem] < 1
-    dem_q_lt1 = _df.loc[_df[dem] < split, dem].quantile(q=np.linspace(0, 1, 250))
-    # Calculate quantiles for _df[dem] > 1
     dem_q_gt1 = _df.loc[_df[dem] > split, dem].quantile(q=np.linspace(0, 1, 250))
-
-    # Calculate delta for _df[dem] < 1 and _df[dem] > 1
-    dq_lt1 = _df.loc[_df[dem] < split, nve].quantile(q=np.linspace(0, 1, 250)) / dem_q_lt1
     dq_gt1 = _df.loc[_df[dem] > split, nve].quantile(q=np.linspace(0, 1, 250)) / dem_q_gt1
     
-    return {'delta_lt1': dq_lt1, 'dem_q_lt1':dem_q_lt1, 'delta_gt1': dq_gt1,'dem_q_gt1':dem_q_gt1 }
+    return {'delta_gt1': dq_gt1,'dem_q_gt1':dem_q_gt1 }
 
-def quantile_mapping(df, dq_lt1, dq_gt1, split=0, dem='sd_predict_dtm1'):
+def quantile_mapping(df, scaling, split=0, dem='sd_predict_dtm1'):
     '''
     The idea of dq_lt1 and dq_gt1 is to split the snow depth into two parts, and then calculate the quantile mapping for each part.
 
     However, it is not necessary to do it as well as set split=0. 
     '''
 
-
     df[dem + '_'] = df[dem].copy()
     
-    # for part of values below than split
-    if split != 0:
-        # Calculate quantiles for _df[dem] < 1
-        dem_q_lt1 = df.loc[df[dem] < split, dem].quantile(q=np.linspace(0, 1, 250))
-         # Apply quantile mapping for _df[dem] < 1
-        condition = (df[dem] >= 0) & (df[dem] <= split)
-        df.loc[condition, dem + '_'] = np.interp(df.loc[condition, dem], dem_q_lt1, dem_q_lt1 * dq_lt1)
-
     # for part of values above than split
     # Calculate quantiles for _df[dem] > 1
     dem_q_gt1 = df.loc[df[dem] > split, dem].quantile(q=np.linspace(0, 1, 250))
     
     # Apply quantile mapping for _df[dem] > 1
-    df.loc[df[dem] > split, dem + '_'] = np.interp(df.loc[df[dem] > split, dem], dem_q_gt1, dem_q_gt1 * dq_gt1)
+    df.loc[df[dem] > split, dem + '_'] = np.interp(df.loc[df[dem] > split, dem], dem_q_gt1, dem_q_gt1 * scaling)
 
     # exclude negative values
     df.loc[df[dem+ '_'] < 0, dem + '_'] = 0
 
 
-def quantile_mapping_original(df, dq_gt1, dem_q_gt1, split=0, dem='sd_predict_dtm1'):
+def quantile_mapping_original(df, scaling, df_quantile, split=0, dem='sd_predict_dtm1'):
 
     '''
     Quantile mapping using the quantiles from samples (dem_q_gt1, equals using the snow depth directly). Not calculated from iteself.
@@ -346,25 +330,19 @@ def quantile_mapping_original(df, dq_gt1, dem_q_gt1, split=0, dem='sd_predict_dt
 
     df[dem + '_'] = df[dem].copy()
 
-    if split != 0:
-        # Apply quantile mapping for _df[dem] < 1
-        condition = (df[dem] >= 0) & (df[dem] <= split)
-        df.loc[condition, dem + '_'] = df.loc[condition,dem]
-
     # Apply quantile mapping for _df[dem] > 1. The main difference between quantile mapping is dem_q_gt1 is from original not computed.
-    df.loc[df[dem] > split, dem + '_'] = np.interp(df.loc[df[dem] > split, dem], dem_q_gt1, dem_q_gt1 * dq_gt1)
+    df.loc[df[dem] > split, dem + '_'] = np.interp(df.loc[df[dem] > split, dem], df_quantile, df_quantile * scaling)
     
     # exclude negative values
     df.loc[df[dem+ '_'] < 0, dem + '_'] = 0
 
 
-def quantile_mapping_xr(data, dq_lt1, dq_gt1, split_f='sd_predict_dtm1', split=0, dem='sd_predict_dtm1',offset=0):
+def quantile_mapping_xr(data, scaling, split_f='sd_predict_dtm1', split=0, dem='sd_predict_dtm1',offset=0):
     """
     Apply quantile mapping to an xarray Dataset for values below and above a split point.
 
     Parameters:
     data (xr.Dataset): The input dataset.
-    dq_lt1 (float): Correction factor for values below the split.
     dq_gt1 (float): Correction factor for values above the split.
     split (float): The value at which to split the dataset for separate corrections.
     dem (str): The name of the variable in the dataset to apply quantile mapping to.
@@ -387,16 +365,6 @@ def quantile_mapping_xr(data, dq_lt1, dq_gt1, split_f='sd_predict_dtm1', split=0
     else:
         split_f = dem
      
-    # Apply quantile mapping if there is a new split_f
-    if split_f != dem:
-        # Calculate quantiles for data[dem] < split
-        dem_q_lt1 = data[dem].where(data[split_f] < split, drop=True).quantile(q=np.linspace(0, 1, 250))
-        # Apply quantile mapping for data[dem] < split
-        condition_lt = (data[split_f] <= split)
-        subset_lt = data[dem].where(condition_lt, drop=True)
-        interp_values_lt = np.interp(subset_lt.values.flatten(), dem_q_lt1.values, dem_q_lt1.values * dq_lt1)
-        interp_da_lt = xr.DataArray(interp_values_lt.reshape(subset_lt.shape), dims=subset_lt.dims, coords=subset_lt.coords)
-        data[dem + '_'] = xr.where(condition_lt, interp_da_lt, data[dem + '_'])
 
     # Apply quantile mapping for values above the split
     # Calculate quantiles for data[dem] > split
@@ -404,7 +372,7 @@ def quantile_mapping_xr(data, dq_lt1, dq_gt1, split_f='sd_predict_dtm1', split=0
     # Apply quantile mapping for data[dem] > split
     condition_gt = data[split_f] > split
     subset_gt = data[dem].where(condition_gt, drop=True)
-    interp_values_gt = np.interp(subset_gt.values.flatten(), dem_q_gt1.values, dem_q_gt1.values * dq_gt1)
+    interp_values_gt = np.interp(subset_gt.values.flatten(), dem_q_gt1.values, dem_q_gt1.values * scaling)
     interp_da_gt = xr.DataArray(interp_values_gt.reshape(subset_gt.shape), dims=subset_gt.dims, coords=subset_gt.coords)
     #data[dem + '_'] = xr.where(condition_gt, interp_da_gt, data[dem + '_'])
     interp_da_gt_aligned, data_dem_aligned = xr.align(interp_da_gt, data[dem + '_'], join='outer')
@@ -414,10 +382,10 @@ def quantile_mapping_xr(data, dq_lt1, dq_gt1, split_f='sd_predict_dtm1', split=0
 
     return data
 
-def quantile_mapping_original_xr(data, dq_gt1, dem_q_gt1, split=0, dem='sd_predict_dtm1',offset=0):
+def quantile_mapping_original_xr(data, scaling, df_quantile, split=0, dem='sd_predict_dtm1',offset=0):
 
     '''
-    Quantile mapping using the quantiles from samples. Not from itself.
+    Quantile mapping using the quantiles from samples (dem_q_gt1). Not from itself (data).
     split == 1, means the values below 1 does not be corrected.
     Return data with a new variable: dem_
     '''
@@ -430,20 +398,15 @@ def quantile_mapping_original_xr(data, dq_gt1, dem_q_gt1, split=0, dem='sd_predi
     # Copy the data to a new variable
     data[dem + '_'] = data[dem].copy()
 
-    if split != 0:
-        # Apply quantile mapping for data[dem] < 1
-        condition_lt = (data[dem] >= 0) & (data[dem] <= split)
-        data[dem + '_'] = xr.where(condition_lt, data[dem], data[dem + '_'])
-
     # Apply quantile mapping for data[dem] > split
     condition_gt = data[dem] > split
     # Make sure dem_q_gt1 and dq_gt1 are 1D numpy arrays
-    dem_q_gt1 = np.array(dem_q_gt1)
-    dq_gt1_values = np.array(dem_q_gt1 * dq_gt1)
+    df_quantile = np.array(df_quantile)
+    dq_gt1_values = np.array(df_quantile * scaling)
 
     # Apply the interpolation only to the points that satisfy the condition
     subset = data[dem].where(condition_gt, drop=True)
-    interp_values = np.interp(subset.values, dem_q_gt1, dq_gt1_values)
+    interp_values = np.interp(subset.values, df_quantile, dq_gt1_values)
 
     # Create a new DataArray from the interpolated values
     interp_da = xr.DataArray(interp_values, dims=subset.dims, coords=subset.coords)
@@ -1864,7 +1827,7 @@ class Snow_Distributor:
         for dem, factor in adjust_factor.items():
             if correction == 'qm':
                 # quantile mapping update the result of df
-                quantile_mapping(df, factor['delta_lt1'],factor['delta_gt1'], dem=dem, split=0)
+                quantile_mapping(df, factor['delta_gt1'], dem=dem, split=0)
             elif correction == 'qm_original':
                 quantile_mapping_original(df, factor['delta_gt1'],factor['dem_q_gt1'],dem=dem, split=0)
 
@@ -1952,7 +1915,7 @@ class Snow_Distributor:
                 start_date = pd.to_datetime('20080101')
             
             if end_date is None:
-                end_date = pd.to_datetime('20220401')
+                end_date = pd.to_datetime('20221001')
             
             # MS means data in the first day of the month
             dates = pd.date_range(start_date, end_date, freq='MS')
